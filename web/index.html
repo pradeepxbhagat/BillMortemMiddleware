@@ -1,0 +1,398 @@
+<!--<%&#45;&#45;
+Created by IntelliJ IDEA.
+User: pp00344204
+Date: 24/06/17
+Time: 4:40 PM
+To change this template use File | Settings | File Templates.
+&#45;&#45;%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>-->
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>BillMortem middleware</title>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            background-color: #2B3B4E;
+            margin-bottom: 0;
+            border-radius: 0;
+            background-image: none;
+            color: #FFFFFF;
+        }
+
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        .row.content {
+            height: 450px
+        }
+
+        /* Set gray background color and 100% height */
+        .sidenav {
+            padding-top: 20px;
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+
+        .col-sm-8 {
+            background-color: #FFFFFF;
+        }
+
+        .table-header {
+            background-color: #7D99A7;
+            color: white;
+        }
+
+        /* Set black background color, white text and some padding */
+        footer {
+            background-color: #2B3B4E;
+            color: white;
+            padding: 15px;
+        }
+
+        .table {
+            max-width: none;
+            table-layout: fixed;
+            word-wrap: break-word;
+        }
+
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+
+            .row.content {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+
+            <a class="navbar-brand" href="#"><img src="res/img_logo.png" alt="Logo"
+                                                  style="max-width:75px; margin-top: -17px;"/></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav ">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid text-center">
+    <div class="row content">
+        <div class="col-sm-2 ">
+        </div>
+        <div class="col-sm-8 text-left">
+            <center><h3>API Directory</h3></center>
+            <div>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr class="table-header">
+                        <th>
+                            <center>Title</center>
+                        </th>
+                        <th>
+                            <center>Url</center>
+                        </th>
+                        <th>
+                            <center>Input</center>
+                        </th>
+                        <th>
+                            <center>Method</center>
+                        </th>
+                        <th>
+                            <center>Headers</center>
+                        </th>
+                        <th>
+                            <center>On Success</center>
+                        </th>
+                        <th>
+                            <center> On Error</center>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            DistinctKey total report
+                        </td>
+                        <td>
+                            /service/report/get_distinct_report
+                        </td>
+                        <td>
+                            Transaction report in json
+                            <br/><br/>
+                            <a href="#" data-toggle="popover" title=" Input response" data-content="{
+  &quot;contents&quot;: [
+    {
+      &quot;price&quot;: 356.5,
+      &quot;date&quot;: &quot;05/05/2017&quot;,
+      &quot;isCredit&quot;: false,
+      &quot;description&quot;: &quot;WWW.VODAFONE.IN MUMBAI&quot;
+    },
+    {
+      &quot;price&quot;: 33.0,
+      &quot;date&quot;: &quot;05/05/2017&quot;,
+      &quot;isCredit&quot;: false,
+      &quot;description&quot;: &quot;PAYTM MOBILE SOLUT INR WWW.PAYTM.IN&quot;
+    }
+  ],
+  &quot;pdf&quot;: {
+    &quot;data&quot;: &quot;Raw Pdf data&quot;
+  }
+}" style="text-decoration: none;"><span class="label label-warning">Sample</span></a>
+
+                        </td>
+                        <td>
+                            Post
+                        </td>
+                        <td>
+                            Content-Type - application/json
+                        </td>
+                        <td>
+                            Map of title and total <br/><br/>
+                            <a href="#" data-toggle="popover" title=" Success response" data-content="{
+  &quot;PAYTM MOBILE SOLUT INR WWW.PAYTM.IN&quot;: 33.0,
+  &quot;WWW.VODAFONE.IN MUMBAI&quot;: 356.5
+}" style="text-decoration: none;"><span class="label label-warning">Sample</span></a>
+                        </td>
+                        <td>
+                            <br/><br/>
+                            <center><a href="#" data-toggle="popover" title=" Error response" data-content="{
+  &quot;error&quot;: {
+    &quot;code&quot;: 1301,
+    &quot;description&quot;: &quot;Not able to process&quot;
+  }
+}" style="text-decoration: none;"><span class="label label-warning">Sample</span></a></center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Intelligent report
+                        </td>
+                        <td>
+                            /service/report/get_intelligent_distinct_report
+                        </td>
+                        <td>
+                            Transaction report in Json
+                            <br/><br/>
+                            <a href="#" data-toggle="popover" title=" Input response" data-content="{
+  &quot;contents&quot;: [
+    {
+      &quot;price&quot;: 356.5,
+      &quot;date&quot;: &quot;05/05/2017&quot;,
+      &quot;isCredit&quot;: false,
+      &quot;description&quot;: &quot;WWW.VODAFONE.IN MUMBAI&quot;
+    },
+    {
+      &quot;price&quot;: 33.0,
+      &quot;date&quot;: &quot;05/05/2017&quot;,
+      &quot;isCredit&quot;: false,
+      &quot;description&quot;: &quot;PAYTM MOBILE SOLUT INR WWW.PAYTM.IN&quot;
+    }
+  ],
+  &quot;pdf&quot;: {
+    &quot;data&quot;: &quot;Raw Pdf data&quot;
+  }
+}" style="text-decoration: none;"><span class="label label-warning">Sample</span></a>
+                        </td>
+                        <td>
+                            Post
+                        </td>
+                        <td>
+                            Content-Type - application/json
+                        </td>
+                        <td>
+                            Map of title and total <br/><br/>
+                            <a href="#" data-toggle="popover" title=" Success response" data-content="{
+  &quot;ENTERPRISES&quot;: 3726.699981689453,
+  &quot;MUMBAI&quot;: 3155.5,
+  &quot;WINES&quot;: 450.0,
+  &quot;PAYTM&quot;: 3695.659999847412,
+  &quot;PUNE&quot;: 4558.199981689453,
+  &quot;HEALTH&quot;: 1850.0
+}" style="text-decoration: none;"><span class="label label-warning">Sample</span></a>
+                        </td>
+                        <td>
+                            <br/>
+                            <center><a href="#" data-toggle="popover" title=" Error response" data-content="{
+  &quot;error&quot;: {
+    &quot;code&quot;: 1301,
+    &quot;description&quot;: &quot;Not able to process&quot;
+  }
+}" style="text-decoration: none;"><span class="label label-warning">Sample</span></a></center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Search
+                        </td>
+                        <td>
+                            /service/search
+                        </td>
+                        <td>
+                            Search term in comma separated in Json<br/><br/>
+                            <a href="#" data-toggle="popover" title=" Input response" data-content="{
+  &quot;searchTerm&quot;: &quot;petro,voda&quot;,
+  &quot;report&quot;: {
+    &quot;contents&quot;: [
+      {
+        &quot;price&quot;: 356.5,
+        &quot;date&quot;: &quot;05/05/2017&quot;,
+        &quot;isCredit&quot;: false,
+        &quot;description&quot;: &quot;WWW.VODAFONE.IN MUMBAI&quot;
+      },
+      {
+        &quot;price&quot;: 33.0,
+        &quot;date&quot;: &quot;05/05/2017&quot;,
+        &quot;isCredit&quot;: false,
+        &quot;description&quot;: &quot;PAYTM MOBILE SOLUT INR WWW.PAYTM.IN&quot;
+      }
+    ],
+    &quot;pdf&quot;: {
+
+    }
+  }
+}" style="text-decoration: none;"><span class="label label-warning">Sample</span></a>
+
+                        </td>
+                        <td>
+                            Post
+                        </td>
+                        <td>
+                            Content-Type - application/json
+                        </td>
+                        <td>
+                            Map of title and transaction reports<br/><br/>
+                            <a href="#" data-toggle="popover" title=" Success response" data-content="{
+  &quot;contents&quot;: [
+    {
+      &quot;price&quot;: 356.5,
+      &quot;date&quot;: &quot;05/05/2017&quot;,
+      &quot;isCredit&quot;: false,
+      &quot;description&quot;: &quot;WWW.VODAFONE.IN MUMBAI&quot;
+    }
+  ]
+}" style="text-decoration: none;"><span class="label label-warning">Sample</span></a>
+                        </td>
+                        <td>
+                            <br/>
+                            <center><a href="#" data-toggle="popover" title=" Error response" data-content="{
+  &quot;error&quot;: {
+    &quot;code&quot;: 1301,
+    &quot;description&quot;: &quot;Not able to process&quot;
+  }
+}" style="text-decoration: none;"><span class="label label-warning">Sample</span></a></center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Transaction list from pdf
+                        </td>
+                        <td>
+                            /service/report/get_transactions
+                        </td>
+                        <td>
+                            Pdf json object<br/><br/>
+                            <a href="#" data-toggle="popover" title=" Input response" data-content="{
+  &quot;data&quot;: &quot;Pdf content&quot;
+}" style="text-decoration: none;"><span class="label label-warning">Sample</span></a>
+                        </td>
+                        <td>
+                            Post
+                        </td>
+                        <td>
+                            Content-Type - application/json
+                        </td>
+                        <td>
+                            List of transactions <br/><br/>
+                            <a href="#" data-toggle="popover" title=" Success response" data-content="{
+  &quot;contents&quot;: [
+    {
+      &quot;price&quot;: 356.5,
+      &quot;date&quot;: &quot;05/05/2017&quot;,
+      &quot;isCredit&quot;: false,
+      &quot;description&quot;: &quot;WWW.VODAFONE.IN MUMBAI&quot;
+    },
+    {
+      &quot;price&quot;: 33.0,
+      &quot;date&quot;: &quot;05/05/2017&quot;,
+      &quot;isCredit&quot;: false,
+      &quot;description&quot;: &quot;PAYTM MOBILE SOLUT INR WWW.PAYTM.IN&quot;
+    }
+  ],
+  &quot;pdf&quot;: {
+    &quot;data&quot;: &quot;Raw Pdf data&quot;
+  }
+}" style="text-decoration: none;"><span class="label label-warning">Sample</span></a>
+                        </td>
+                        <td>
+                            <center><div>
+                                <a href="#" data-toggle="popover" title=" Error response" data-content="{
+  &quot;error&quot;: {
+    &quot;code&quot;: 1302,
+    &quot;description&quot;: &quot;Invalid pdf file&quot;
+  }
+}" style="text-decoration: none;"><span class="label label-warning">Sample1</span></a>
+                                <br/><br/>
+                                <a href="#" data-toggle="popover" title=" Error response" data-content="{
+  &quot;error&quot;: {
+    &quot;code&quot;: 1303,
+    &quot;description&quot;: &quot;Password required&quot;
+  }
+}" style="text-decoration: none;"><span class="label label-warning">Sample2</span></a>
+                                <br/><br/>
+                                <a href="#" data-toggle="popover" title=" Error response" data-content="{
+  &quot;error&quot;: {
+    &quot;code&quot;: 1304,
+    &quot;description&quot;: &quot;Password invalid&quot;
+  }
+}" style="text-decoration: none;"><span class="label label-warning">Sample3</span></a>
+                                <br/><br/>
+                                <a href="#" data-toggle="popover" title=" Error response" data-content="{
+  &quot;error&quot;: {
+    &quot;code&quot;: 1301,
+    &quot;description&quot;: &quot;Not able to process&quot;
+  }
+}" style="text-decoration: none;"><span class="label label-warning">Sample4</span></a>
+                            </div></center>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item"><h4><span><span class="label label-info">Server:</span> <span
+                        class="label label-warning">https://enigmatic-falls-78460.herokuapp.com</span></span></h4>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-2 ">
+
+        </div>
+    </div>
+</div>
+
+<footer class="container-fluid text-center">
+    <div style="text-align:right;">Pradeep Pankaj  <a target="_blank" href="https://github.com/pradeepxpankaj"><img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" alt="Github" width="30px" height="30px"/></a></div>
+</footer>
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="popover"]').popover();
+    });
+</script>
+</body>
+</html>
